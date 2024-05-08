@@ -55,3 +55,21 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+/*=== Email ===*/
+function composeEmail() {
+    // Change the email address to your desired email
+    var emailAddress = "mergequestgroup@gmail.com";
+    var subject = "Inquiry";
+    // Get values from the form inputs
+    var name = document.querySelector('.contact__input[name="name"]').value;
+    var email = document.querySelector('.contact__input[name="email"]').value;
+    var message = document.querySelector('.contact__input[name="message"]').value;
+    // Construct the body of the email
+    var body = "Name: " + name + "\n" +
+               "Email: " + email + "\n" +
+               "Message: " + message;
+
+    var mailtoLink = "mailto:" + emailAddress + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+    window.location.href = mailtoLink;
+}
